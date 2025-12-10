@@ -1,0 +1,2663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorry Chahat ����️</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #ff69b4 0%,
+          #e9d8ff 50%,
+          #cfeaf9 100%
+        );
+        overflow-x: hidden;
+        width: 100%;
+        min-height: 100%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Floating hearts animation */
+      @keyframes floatHearts {
+        0% {
+          transform: translateY(0) scale(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-100px) scale(1);
+          opacity: 0;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0) rotate(-180deg);
+          opacity: 0;
+        }
+        60% {
+          transform: scale(1.2) rotate(20deg);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+      }
+
+      #giftModal .modal-content {
+        animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(255, 105, 180, 0.8);
+        }
+      }
+
+      .floating-hearts {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .heart {
+        position: absolute;
+        font-size: 24px;
+        animation: floatHearts 6s infinite;
+        opacity: 0.6;
+      }
+
+      .main-container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        text-align: center;
+        padding: 60px 20px;
+        position: relative;
+      }
+
+      .hero-title {
+        font-size: 64px;
+        font-weight: 700;
+        color: #ffffff;
+        text-shadow: 0 4px 20px rgba(255, 105, 180, 0.5);
+        margin-bottom: 20px;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .characters-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin: 40px 0;
+        flex-wrap: wrap;
+      }
+
+      .character {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .character:nth-child(2) {
+        animation-delay: 1.5s;
+      }
+
+      .speech-bubble {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 3px solid #ff69b4;
+        border-radius: 25px;
+        padding: 25px 35px;
+        margin: 30px auto;
+        max-width: 600px;
+        font-size: 22px;
+        color: #ff69b4;
+        font-weight: 600;
+        box-shadow: 0 8px 32px rgba(255, 105, 180, 0.3);
+        position: relative;
+      }
+
+      .speech-bubble::before {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #ff69b4;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #ffd7e0 0%, #e9d8ff 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 20px 50px;
+        font-size: 20px;
+        color: #ff69b4;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 8px 32px rgba(255, 105, 180, 0.4);
+        transition: all 0.3s ease;
+        animation: glow 2s infinite;
+        margin-top: 20px;
+        position: relative;
+      }
+
+      .cta-button:hover {
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 12px 40px rgba(255, 105, 180, 0.6);
+      }
+
+      .cta-button:active {
+        transform: scale(0.98) translateY(1px);
+        box-shadow: 0 4px 20px rgba(255, 105, 180, 0.5);
+      }
+
+      /* Glass Card */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(20px);
+        border-radius: 30px;
+        padding: 40px;
+        margin: 40px auto;
+        max-width: 900px;
+        box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .section-title {
+        font-size: 48px;
+        font-weight: 700;
+        color: #dc143c;
+        text-align: center;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+      }
+
+      .apology-text {
+        font-size: 20px;
+        color: #2d2d2d;
+        line-height: 1.8;
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .apology-card-container {
+        display: none;
+      }
+
+      .apology-card-container:first-child {
+        display: block;
+      }
+
+      .forgiveness-step {
+        display: none;
+      }
+
+      .forgiveness-step:first-child {
+        display: block;
+      }
+
+      /* Memory Gallery */
+      .memory-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin: 40px 0;
+      }
+
+      .memory-card {
+        background: linear-gradient(135deg, #ffe5e5 0%, #ffd7e0 100%);
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .memory-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 30px rgba(255, 105, 180, 0.5);
+      }
+
+      .memory-icon {
+        font-size: 64px;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 4px 10px rgba(255, 105, 180, 0.3));
+      }
+
+      .memory-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #ff69b4;
+        margin-bottom: 10px;
+      }
+
+      .memory-desc {
+        font-size: 16px;
+        color: #d63384;
+        line-height: 1.6;
+      }
+
+      /* Promise Cards */
+      .promise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin: 40px 0;
+      }
+
+      .promise-card {
+        background: linear-gradient(135deg, #e9d8ff 0%, #cfeaf9 100%);
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(233, 216, 255, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      .promise-card:hover {
+        transform: scale(1.05);
+      }
+
+      .promise-icon {
+        font-size: 56px;
+        margin-bottom: 15px;
+      }
+
+      .promise-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: #8b5cf6;
+      }
+
+      /* Forgiveness Heart Button */
+      .forgiveness-section {
+        text-align: center;
+        padding: 60px 20px;
+        position: relative;
+      }
+
+      .heart-button-container {
+        position: relative;
+        display: inline-block;
+        margin: 40px 0;
+      }
+
+      .heart-button {
+        background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 40px 60px;
+        font-size: 28px;
+        color: #ffffff;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 0 40px rgba(255, 105, 180, 0.6);
+        animation: pulse 2s infinite;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      .heart-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 60px rgba(255, 105, 180, 0.9);
+      }
+
+      .heart-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 105, 180, 0.4) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        z-index: 1;
+        animation: pulse 2s infinite;
+      }
+
+      /* Memory Game */
+      .game-container {
+        max-width: 700px;
+        margin: 40px auto;
+      }
+
+      .game-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin: 30px 0;
+      }
+
+      .game-card {
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, #ffd7e0 0%, #ff69b4 100%);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .game-card.flipped {
+        background: linear-gradient(135deg, #ffffff 0%, #ffe5e5 100%);
+      }
+
+      .game-card.matched {
+        background: linear-gradient(135deg, #90ee90 0%, #98fb98 100%);
+        animation: pulse 0.5s;
+      }
+
+      .game-card .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backface-visibility: hidden;
+        font-size: 36px;
+      }
+
+      .game-card .card-back::after {
+        content: "❓";
+      }
+
+      .game-card .card-front {
+        display: none;
+        font-size: 48px;
+      }
+
+      .game-card.flipped .card-back {
+        display: none;
+      }
+
+      .game-card.flipped .card-front {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .reset-button {
+        background: linear-gradient(135deg, #cfeaf9 0%, #e9d8ff 100%);
+        border: none;
+        border-radius: 30px;
+        padding: 15px 40px;
+        font-size: 18px;
+        color: #8b5cf6;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        transition: all 0.3s ease;
+        margin-top: 20px;
+      }
+
+      .reset-button:hover {
+        transform: scale(1.05);
+      }
+
+      .reset-button:active {
+        transform: scale(0.98);
+      }
+
+      /* Distance Game Styles */
+      .distance-game-container {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .distance-btn {
+        background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+        border: none;
+        border-radius: 30px;
+        padding: 18px 45px;
+        font-size: 20px;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .distance-btn:hover {
+        transform: scale(1.08) translateY(-3px);
+        box-shadow: 0 10px 30px rgba(255, 105, 180, 0.6);
+      }
+
+      .distance-btn:active {
+        transform: scale(0.95) translateY(1px);
+        box-shadow: 0 3px 15px rgba(255, 105, 180, 0.5);
+      }
+
+      .push-btn {
+        background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+        box-shadow: 0 6px 20px rgba(107, 114, 128, 0.4);
+      }
+
+      .push-btn:hover {
+        box-shadow: 0 10px 30px rgba(107, 114, 128, 0.6);
+      }
+
+      .closer-btn {
+        animation: gentlePulse 2s infinite;
+      }
+
+      @keyframes gentlePulse {
+        0%,
+        100% {
+          box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+        }
+        50% {
+          box-shadow: 0 6px 30px rgba(255, 105, 180, 0.7);
+        }
+      }
+
+      @keyframes heartPop {
+        0% {
+          transform: scale(0) rotate(-180deg);
+          opacity: 0;
+        }
+        60% {
+          transform: scale(1.3) rotate(20deg);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      .distance-hearts {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .distance-heart {
+        position: absolute;
+        font-size: 20px;
+        opacity: 0.4;
+        animation: floatUpDown 3s ease-in-out infinite;
+      }
+
+      @keyframes floatUpDown {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      #sadikChar,
+      #chahatChar {
+        animation: heartbeat 1.5s ease-in-out infinite;
+        z-index: 2;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: translateY(-50%) scale(1);
+        }
+        50% {
+          transform: translateY(-50%) scale(1.05);
+        }
+      }
+
+      /* Hug Coupon */
+      .coupon-container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: linear-gradient(135deg, #ffe5e5 0%, #ffd7e0 100%);
+        border: 3px dashed #ff69b4;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(255, 105, 180, 0.3);
+        position: relative;
+      }
+
+      .coupon-seal {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background: #ff69b4;
+        color: white;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
+        transform: rotate(15deg);
+        line-height: 1.3;
+        padding: 10px;
+      }
+
+      .coupon-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #ff69b4;
+        margin-bottom: 20px;
+      }
+
+      .coupon-emoji {
+        font-size: 80px;
+        margin: 20px 0;
+      }
+
+      /* Music Player */
+      .music-player {
+        max-width: 500px;
+        margin: 40px auto;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        padding: 30px;
+        box-shadow: 0 8px 32px rgba(255, 105, 180, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .music-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #000000;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .music-controls {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .music-btn {
+        background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .music-btn:hover {
+        transform: scale(1.1);
+      }
+
+      .waveform {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        height: 50px;
+        margin: 20px 0;
+      }
+
+      .wave-bar {
+        width: 4px;
+        background: linear-gradient(180deg, #ff69b4 0%, #ff1493 100%);
+        border-radius: 2px;
+        animation: wave 1s ease-in-out infinite;
+      }
+
+      .wave-bar:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .wave-bar:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .wave-bar:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      .wave-bar:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+      .wave-bar:nth-child(6) {
+        animation-delay: 0.5s;
+      }
+      .wave-bar:nth-child(7) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes wave {
+        0%,
+        100% {
+          height: 10px;
+        }
+        50% {
+          height: 40px;
+        }
+      }
+
+      /* Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      .modal-content {
+        background: linear-gradient(135deg, #ffe5e5 0%, #ffd7e0 100%);
+        border-radius: 30px;
+        padding: 50px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        position: relative;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .modal-emoji {
+        font-size: 80px;
+        margin-bottom: 20px;
+      }
+
+      .modal-text {
+        font-size: 24px;
+        color: #ff69b4;
+        font-weight: 700;
+        line-height: 1.6;
+        margin: 20px 0;
+      }
+
+      .modal-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+
+      .modal-btn {
+        background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+        border: none;
+        border-radius: 25px;
+        padding: 15px 35px;
+        font-size: 18px;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      .modal-btn:hover {
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+      }
+
+      .modal-btn:active {
+        transform: scale(0.98) translateY(1px);
+      }
+
+      .modal-btn.secondary {
+        background: rgba(255, 255, 255, 0.9);
+        color: #ff69b4;
+        border: 2px solid #ff69b4;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 60px 20px 40px;
+        position: relative;
+      }
+
+      .footer-divider {
+        max-width: 600px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          #ff69b4 50%,
+          transparent 100%
+        );
+        margin: 0 auto 40px;
+        position: relative;
+      }
+
+      .footer-divider::before {
+        content: "💖";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 32px;
+        background: linear-gradient(135deg, #ffd7e0 0%, #e9d8ff 100%);
+        padding: 10px 20px;
+        border-radius: 50%;
+      }
+
+      .footer-text {
+        font-size: 40px;
+        font-weight: 700;
+        color: #ffffff;
+        text-shadow: 0 4px 20px rgba(255, 105, 180, 0.5);
+        margin-bottom: 20px;
+      }
+
+      .footer-characters {
+        font-size: 48px;
+        margin-top: 20px;
+      }
+
+      /* Space Message */
+      .space-message {
+        max-width: 700px;
+        margin: 40px auto;
+        background: rgba(207, 234, 249, 0.3);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .space-icon {
+        font-size: 80px;
+        margin-bottom: 20px;
+      }
+
+      .space-text {
+        font-size: 20px;
+        color: #ffffff;
+        line-height: 1.8;
+        font-weight: 600;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 40px;
+        }
+
+        .section-title {
+          font-size: 32px;
+        }
+
+        .speech-bubble {
+          font-size: 18px;
+          padding: 20px 25px;
+        }
+
+        .cta-button {
+          font-size: 16px;
+          padding: 15px 35px;
+        }
+
+        .game-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 10px;
+        }
+
+        .game-card {
+          font-size: 32px;
+        }
+
+        .modal-content {
+          padding: 30px;
+        }
+
+        .coupon-seal {
+          width: 80px;
+          height: 80px;
+          font-size: 12px;
+        }
+      }
+    </style>
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+    <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+  </head>
+  <body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <!-- Main Container -->
+    <div class="main-container">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h1 class="hero-title" id="mainHeading">Sorry Chahat ❤️</h1>
+        <!-- Characters -->
+        <div class="characters-container">
+          <!-- Bubu (Bear) -->
+          <div class="character">
+            <svg
+              width="150"
+              height="150"
+              viewbox="0 0 150 150"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Ears -->
+              <circle cx="40" cy="40" r="25" fill="#8B4513" opacity="0.9" />
+              <circle cx="110" cy="40" r="25" fill="#8B4513" opacity="0.9" />
+              <circle cx="40" cy="40" r="18" fill="#D2691E" />
+              <circle cx="110" cy="40" r="18" fill="#D2691E" />
+              <!-- Head -->
+              <circle cx="75" cy="75" r="50" fill="#8B4513" />
+              <ellipse cx="75" cy="85" rx="38" ry="35" fill="#D2691E" />
+              <!-- Eyes -->
+              <circle cx="60" cy="70" r="8" fill="#000000" />
+              <circle cx="90" cy="70" r="8" fill="#000000" />
+              <circle cx="62" cy="68" r="3" fill="#ffffff" />
+              <circle cx="92" cy="68" r="3" fill="#ffffff" />
+              <!-- Blush -->
+              <ellipse
+                cx="45"
+                cy="85"
+                rx="12"
+                ry="8"
+                fill="#FFB6C1"
+                opacity="0.6"
+              />
+              <ellipse
+                cx="105"
+                cy="85"
+                rx="12"
+                ry="8"
+                fill="#FFB6C1"
+                opacity="0.6"
+              />
+              <!-- Nose -->
+              <ellipse cx="75" cy="85" rx="10" ry="8" fill="#654321" />
+              <!-- Mouth (sad) -->
+              <path
+                d="M 65 95 Q 75 92 85 95"
+                stroke="#654321"
+                stroke-width="2"
+                fill="none"
+              />
+              <!-- Tear -->
+              <ellipse
+                cx="92"
+                cy="82"
+                rx="3"
+                ry="5"
+                fill="#87CEEB"
+                opacity="0.7"
+              />
+            </svg>
+            <div
+              style="
+                text-align: center;
+                color: white;
+                font-weight: 700;
+                margin-top: 10px;
+              "
+            >
+              Sadik 🐻
+            </div>
+          </div>
+          <!-- Dudu (Panda) -->
+          <div class="character">
+            <svg
+              width="150"
+              height="150"
+              viewbox="0 0 150 150"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Ears -->
+              <ellipse cx="45" cy="45" rx="20" ry="22" fill="#000000" />
+              <ellipse cx="105" cy="45" rx="20" ry="22" fill="#000000" />
+              <!-- Head -->
+              <circle cx="75" cy="75" r="45" fill="#ffffff" />
+              <!-- Eye patches -->
+              <ellipse cx="60" cy="68" rx="15" ry="18" fill="#000000" />
+              <ellipse cx="90" cy="68" rx="15" ry="18" fill="#000000" />
+              <!-- Eyes -->
+              <circle cx="60" cy="70" r="6" fill="#ffffff" />
+              <circle cx="90" cy="70" r="6" fill="#ffffff" />
+              <circle cx="61" cy="69" r="3" fill="#000000" />
+              <circle cx="91" cy="69" r="3" fill="#000000" />
+              <!-- Blush -->
+              <ellipse
+                cx="40"
+                cy="85"
+                rx="10"
+                ry="6"
+                fill="#FFB6C1"
+                opacity="0.6"
+              />
+              <ellipse
+                cx="110"
+                cy="85"
+                rx="10"
+                ry="6"
+                fill="#FFB6C1"
+                opacity="0.6"
+              />
+              <!-- Nose -->
+              <ellipse cx="75" cy="85" rx="8" ry="6" fill="#000000" />
+              <!-- Mouth (cute) -->
+              <path
+                d="M 75 85 L 70 92"
+                stroke="#000000"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M 75 85 L 80 92"
+                stroke="#000000"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M 68 93 Q 75 96 82 93"
+                stroke="#000000"
+                stroke-width="2"
+                fill="none"
+              />
+            </svg>
+            <div
+              style="
+                text-align: center;
+                color: white;
+                font-weight: 700;
+                margin-top: 10px;
+              "
+            >
+              Chahat 🐼
+            </div>
+          </div>
+        </div>
+        <!-- Speech Bubbles -->
+        <div class="speech-bubble" id="heroMessage">
+          Chahat, main tumse bohot pyaar karta hun... 💕
+        </div>
+        <div class="speech-bubble">Mujhe maaf kar do na please... 🥺</div>
+        <button class="cta-button" onclick="revealApology()">
+          Tap to Start Reading 💕
+        </button>
+      </section>
+      <!-- Apology Section -->
+      <section class="glass-card" id="apologySection" style="display: none">
+        <h2 class="section-title" id="apologyHeading">Dil Se Sorry 💔</h2>
+        <div id="apologyContainer">
+          <!-- Apology 1 -->
+          <div id="apology1" class="apology-card-container">
+            <div
+              style="
+                background: rgba(255, 240, 245, 0.8);
+                border-radius: 20px;
+                padding: 30px;
+                margin: 20px 0;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+              "
+            >
+              <p
+                class="apology-text"
+                id="apologyMessage"
+                style="margin-bottom: 20px"
+              >
+                I know I hurt you, and I can't take back what I did. But please
+                know that every moment without your smile feels empty. You mean
+                everything to me, and I promise to be better, to listen more, to
+                cherish you more.
+              </p>
+            </div>
+            <div style="text-align: center; margin: 20px 0">
+              <button
+                class="cta-button"
+                onclick="showApology(2)"
+                style="padding: 15px 40px; font-size: 18px"
+              >
+                Continue Reading... 📖
+              </button>
+            </div>
+          </div>
+          <!-- Apology 2 -->
+          <div id="apology2" class="apology-card-container">
+            <div
+              style="
+                background: rgba(255, 240, 245, 0.8);
+                border-radius: 20px;
+                padding: 30px;
+                margin: 20px 0;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+              "
+            >
+              <p class="apology-text" style="margin-bottom: 20px">
+                Please give me one more chance to show you how much you matter
+                to me. I promise to never let you down again. Your happiness is
+                my priority, and I'll do everything to see that beautiful smile
+                back on your face. 😊💕
+              </p>
+            </div>
+            <div style="text-align: center; margin: 20px 0">
+              <button
+                class="cta-button"
+                onclick="showApology(3)"
+                style="padding: 15px 40px; font-size: 18px"
+              >
+                Next Page... 💕
+              </button>
+            </div>
+          </div>
+          <!-- Apology 3 -->
+          <div id="apology3" class="apology-card-container">
+            <div
+              style="
+                background: rgba(255, 240, 245, 0.8);
+                border-radius: 20px;
+                padding: 30px;
+                margin: 20px 0;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+              "
+            >
+              <p class="apology-text" style="margin-bottom: 20px">
+                Tum meri duniya ho Chahat. Tumhare bina sab adhura hai. Main
+                hamesha tumhara saath dunga aur tumhe kabhi udaas nahi karunga.
+                Meri zindagi mein sirf tum ho, aur tum hi rahogi hamesha.
+                Promise. ❤️
+              </p>
+            </div>
+            <div style="text-align: center; margin: 20px 0">
+              <button
+                class="cta-button"
+                onclick="showApology(4)"
+                style="padding: 15px 40px; font-size: 18px"
+              >
+                Continue... 💭
+              </button>
+            </div>
+          </div>
+          <!-- Apology 4 -->
+          <div id="apology4" class="apology-card-container">
+            <div
+              style="
+                background: rgba(255, 240, 245, 0.8);
+                border-radius: 20px;
+                padding: 30px;
+                margin: 20px 0;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+              "
+            >
+              <p class="apology-text">
+                Every tear I made you cry haunts me. Every moment of pain I
+                caused you breaks my heart. I want to be the reason for your
+                smile, not your tears. Please forgive me, my love. 💕
+              </p>
+            </div>
+            <div style="text-align: center; margin: 20px 0">
+              <button
+                class="cta-button"
+                onclick="revealMemories()"
+                style="padding: 18px 45px; font-size: 20px"
+              >
+                See Our Memories 💖
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Sweet Memory Gallery -->
+      <section class="glass-card" id="memoriesSection" style="display: none">
+        <h2 class="section-title">Our Beautiful Memories 💕</h2>
+        <div class="memory-grid">
+          <div class="memory-card">
+            <div class="memory-icon">💬</div>
+            <div class="memory-title">Heart-to-Heart Talks</div>
+            <div class="memory-desc">
+              Late night conversations that made everything better
+            </div>
+          </div>
+          <div class="memory-card">
+            <div class="memory-icon">🌙</div>
+            <div class="memory-title">Late Night Calls</div>
+            <div class="memory-desc">Staying up together, sharing dreams</div>
+          </div>
+          <div class="memory-card">
+            <div class="memory-icon">🤝</div>
+            <div class="memory-title">Trust &amp; Loyalty</div>
+            <div class="memory-desc">Building something special together</div>
+          </div>
+          <div class="memory-card">
+            <div class="memory-icon">💕</div>
+            <div class="memory-title">Pure Devotion</div>
+            <div class="memory-desc">Every moment filled with love</div>
+          </div>
+          <div class="memory-card">
+            <div class="memory-icon">🌍</div>
+            <div class="memory-title">Beyond Distance</div>
+            <div class="memory-desc">Nothing can keep us apart</div>
+          </div>
+          <div class="memory-card">
+            <div class="memory-icon">✨</div>
+            <div class="memory-title">First Love</div>
+            <div class="memory-desc">The most precious relationship</div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px">
+          <button
+            class="cta-button"
+            onclick="revealPromises()"
+            style="padding: 18px 45px; font-size: 20px"
+          >
+            Read My Promises 🤝
+          </button>
+        </div>
+      </section>
+      <!-- Promise Section -->
+      <section class="glass-card" id="promiseSection" style="display: none">
+        <h2 class="section-title">Mera Promise Tumhse 🤝</h2>
+        <div class="promise-grid">
+          <div class="promise-card">
+            <div class="promise-icon">👂</div>
+            <div
+              class="promise-text"
+              style="font-weight: 700; margin-bottom: 8px; color: #8b5cf6"
+            >
+              Better Listening
+            </div>
+            <p style="font-size: 15px; color: #2d2d2d; margin: 0">
+              Tumhari har baat sununga dhyan se
+            </p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">💬</div>
+            <div
+              class="promise-text"
+              style="font-weight: 700; margin-bottom: 8px; color: #8b5cf6"
+            >
+              Better Communication
+            </div>
+            <p style="font-size: 15px; color: #2d2d2d; margin: 0">
+              Koi misunderstanding nahi hogi ab
+            </p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">⏰</div>
+            <div
+              class="promise-text"
+              style="font-weight: 700; margin-bottom: 8px; color: #8b5cf6"
+            >
+              Quality Time
+            </div>
+            <p style="font-size: 15px; color: #2d2d2d; margin: 0">
+              Tumhare saath zyada waqt bitaunga
+            </p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">💖</div>
+            <div
+              class="promise-text"
+              style="font-weight: 700; margin-bottom: 8px; color: #8b5cf6"
+            >
+              Daily Love
+            </div>
+            <p style="font-size: 15px; color: #2d2d2d; margin: 0">
+              Har din dikhaunga kitna pyaar karta hun
+            </p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">🌟</div>
+            <div
+              class="promise-text"
+              style="font-weight: 700; margin-bottom: 8px; color: #8b5cf6"
+            >
+              Better Partner
+            </div>
+            <p style="font-size: 15px; color: #2d2d2d; margin: 0">
+              Woh partner banunga jo tum deserve karti ho
+            </p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">🤗</div>
+            <div
+              class="promise-text"
+              style="font-weight: 700; margin-bottom: 8px; color: #8b5cf6"
+            >
+              More Affection
+            </div>
+            <p style="font-size: 15px; color: #2d2d2d; margin: 0">
+              Zyada hugs, zyada pyaar, zyada care
+            </p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px">
+          <button
+            class="cta-button"
+            onclick="revealSpace()"
+            style="padding: 18px 45px; font-size: 20px"
+          >
+            Tap to Continue 💙
+          </button>
+        </div>
+      </section>
+      <!-- Space Message -->
+      <div class="space-message" id="spaceSection" style="display: none">
+        <div class="space-icon">💙</div>
+        <div
+          class="space-text"
+          style="
+            color: #2d2d2d;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+          "
+        >
+          Chahat, I understand if you need space. But know that my heart will
+          always be waiting for you, with open arms and endless love. You're my
+          forever. 🌙✨
+        </div>
+        <div style="text-align: center; margin-top: 30px">
+          <button
+            class="cta-button"
+            onclick="revealMusic()"
+            style="padding: 18px 45px; font-size: 20px"
+          >
+            Hear A Song For You 🎵
+          </button>
+        </div>
+      </div>
+      <!-- Music Player -->
+      <section class="glass-card" id="musicSection" style="display: none">
+        <h2 class="section-title">Chahat Ke Liye 🎵</h2>
+        <div class="music-player">
+          <div class="music-title">A Song Dedicated To You 💕</div>
+          <div style="margin: 30px 0">
+            <audio
+              id="love-audio"
+              controls
+              preload="none"
+              style="width: 100%; border-radius: 15px; outline: none"
+            >
+              <source
+                src="https://cdn.jsdelivr.net/gh/Sadik47x/Sorryy@main/tumhejo1.mp3"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="music-controls">
+            <button class="music-btn" onclick="playMusic()">▶️</button>
+            <button class="music-btn" onclick="pauseMusic()">⏸️</button>
+            <button class="music-btn" onclick="stopMusic()">⏹️</button>
+          </div>
+          <div class="waveform">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+          </div>
+          <p
+            class="apology-text"
+            style="color: #ff69b4; font-size: 18px; margin-top: 20px"
+          >
+            This song reminds me of us 💖
+          </p>
+        </div>
+        <div style="text-align: center; margin-top: 30px">
+          <button
+            class="cta-button"
+            onclick="revealGame()"
+            style="padding: 18px 45px; font-size: 20px"
+          >
+            Play A Game With Me 🎮
+          </button>
+        </div>
+      </section>
+      <!-- Memory Matching Game -->
+      <section class="glass-card" id="gameSection" style="display: none">
+        <h2 class="section-title">Love Memory Game 💝</h2>
+        <div class="game-container">
+          <p class="apology-text">
+            Match the hearts to see how much I remember every little thing about
+            us! 💕
+          </p>
+          <div class="game-grid" id="gameGrid"></div>
+          <div style="text-align: center">
+            <button class="reset-button" onclick="resetGame()">
+              Play Again 🎮
+            </button>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px">
+          <button
+            class="cta-button"
+            onclick="revealDistance()"
+            style="padding: 18px 45px; font-size: 20px"
+          >
+            Next Activity 💕
+          </button>
+        </div>
+      </section>
+      <!-- Sadik is Coming Closer Game -->
+      <section class="glass-card" id="distanceSection" style="display: none">
+        <h2 class="section-title">Sadik is Coming Closer to Chahat ❤️</h2>
+        <div class="distance-game-container">
+          <p class="apology-text" style="margin-bottom: 30px">
+            Help Sadik reach Chahat! Every step closer shows how much he's
+            trying... 🥺💕
+          </p>
+          <!-- Distance Display -->
+          <div
+            style="
+              background: rgba(255, 255, 255, 0.4);
+              border-radius: 20px;
+              padding: 20px;
+              margin: 20px 0;
+              text-align: center;
+            "
+          >
+            <div
+              style="
+                font-size: 18px;
+                font-weight: 700;
+                color: #ff69b4;
+                margin-bottom: 10px;
+              "
+            >
+              Distance Between Us
+            </div>
+            <div
+              style="font-size: 48px; font-weight: 700; color: #ff1493"
+              id="distanceValue"
+            >
+              10
+            </div>
+            <div style="font-size: 14px; color: #d63384; margin-top: 5px">
+              steps away
+            </div>
+          </div>
+          <!-- Distance Bar -->
+          <div
+            style="
+              background: rgba(255, 255, 255, 0.3);
+              border-radius: 50px;
+              height: 20px;
+              margin: 30px 0;
+              position: relative;
+              overflow: hidden;
+            "
+          >
+            <div
+              id="distanceBar"
+              style="
+                background: linear-gradient(90deg, #ff69b4 0%, #ff1493 100%);
+                height: 100%;
+                width: 0%;
+                transition: width 0.5s ease;
+                border-radius: 50px;
+              "
+            ></div>
+          </div>
+          <!-- Game Arena -->
+          <div
+            style="
+              position: relative;
+              height: 200px;
+              background: rgba(255, 240, 245, 0.3);
+              border-radius: 20px;
+              margin: 30px 0;
+              overflow: hidden;
+            "
+          >
+            <!-- Floating hearts in background -->
+            <div class="distance-hearts" id="distanceHearts"></div>
+            <!-- Sadik Character -->
+            <div
+              id="sadikChar"
+              style="
+                position: absolute;
+                left: 5%;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 80px;
+                transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+              "
+            >
+              🐻
+            </div>
+            <!-- Chahat Character -->
+            <div
+              id="chahatChar"
+              style="
+                position: absolute;
+                right: 5%;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 80px;
+                filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+              "
+            >
+              🐼
+            </div>
+            <!-- Meeting Animation -->
+            <div
+              id="meetingAnimation"
+              style="
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: none;
+              "
+            >
+              <div style="font-size: 100px; animation: heartPop 0.6s ease">
+                💖
+              </div>
+            </div>
+          </div>
+          <!-- Dialogue Box -->
+          <div
+            id="dialogueBox"
+            style="
+              background: rgba(255, 255, 255, 0.9);
+              border-radius: 20px;
+              padding: 25px;
+              margin: 30px 0;
+              min-height: 80px;
+              box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+            "
+          >
+            <p
+              style="
+                font-size: 20px;
+                color: #ff69b4;
+                font-weight: 600;
+                line-height: 1.6;
+                margin: 0;
+              "
+              id="dialogueText"
+            >
+              Click "Come Closer ❤️" to help Sadik reach Chahat...
+            </p>
+          </div>
+          <!-- Game Controls -->
+          <div
+            style="
+              display: flex;
+              gap: 20px;
+              justify-content: center;
+              flex-wrap: wrap;
+              margin: 30px 0;
+            "
+          >
+            <button
+              class="distance-btn push-btn"
+              onclick="pushAway()"
+              id="pushBtn"
+            >
+              Push Away 😔
+            </button>
+            <button
+              class="distance-btn closer-btn"
+              onclick="comeCloser()"
+              id="closerBtn"
+            >
+              Come Closer ❤️
+            </button>
+          </div>
+          <!-- Reset Button -->
+          <div style="text-align: center; margin-top: 20px">
+            <button class="reset-button" onclick="resetDistanceGame()">
+              Reset Game 🔄
+            </button>
+          </div>
+          <!-- Victory Message -->
+          <div
+            id="victoryMessage"
+            style="display: none; text-align: center; margin: 30px 0"
+          >
+            <div style="font-size: 48px; margin-bottom: 20px">🎉💕🎉</div>
+            <p
+              class="apology-text"
+              style="
+                font-size: 24px;
+                font-weight: 700;
+                color: #ff69b4;
+                margin-bottom: 20px;
+              "
+            >
+              Sadik finally reached Chahat!
+            </p>
+            <button
+              class="cta-button"
+              onclick="giveHug()"
+              style="font-size: 22px; padding: 20px 50px"
+            >
+              Give Hug 🤗
+            </button>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px">
+          <button
+            class="cta-button"
+            onclick="revealGift()"
+            style="padding: 18px 45px; font-size: 20px"
+          >
+            See Your Special Gift 🎁
+          </button>
+        </div>
+      </section>
+      <!-- Hug Coupon -->
+      <section class="glass-card" id="giftSection" style="display: none">
+        <h2 class="section-title">Special Gift For You 🎁</h2>
+        <div style="text-align: center; padding: 40px 20px">
+          <p class="apology-text" style="margin-bottom: 30px">
+            I have a very special gift waiting for you... 💝
+          </p>
+          <button
+            class="cta-button"
+            onclick="showGiftModal()"
+            style="font-size: 24px; padding: 25px 55px"
+          >
+            Tap to Open Gift 🎁✨
+          </button>
+        </div>
+      </section>
+      <!-- Forgiveness Section -->
+      <section
+        class="forgiveness-section"
+        id="forgivenessSection"
+        style="display: none"
+      >
+        <h2 class="section-title">Will You Forgive Me? 🥺</h2>
+        <div id="forgivenessJourney">
+          <!-- Step 1 -->
+          <div id="step1" class="forgiveness-step" style="display: block">
+            <p class="apology-text" style="font-size: 22px; margin: 30px 0">
+              Would you like to hear why I'm truly sorry? 💭
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <button class="modal-btn" onclick="nextStep(2)">
+                Yes, tell me 💕
+              </button>
+              <button class="modal-btn secondary" onclick="nextStep(2)">
+                I'm listening... 👂
+              </button>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div id="step2" class="forgiveness-step" style="display: none">
+            <p class="apology-text" style="font-size: 22px; margin: 30px 0">
+              I realize how much my actions hurt you. Can you feel my sincerity?
+              🙏
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <button class="modal-btn" onclick="nextStep(3)">
+                I can see you're sorry 💗
+              </button>
+              <button class="modal-btn secondary" onclick="nextStep(3)">
+                Maybe... go on 🤔
+              </button>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div id="step3" class="forgiveness-step" style="display: none">
+            <p class="apology-text" style="font-size: 22px; margin: 30px 0">
+              Do you believe people deserve a second chance? 🌟
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <button class="modal-btn" onclick="nextStep(4)">
+                Yes, everyone does ✨
+              </button>
+              <button class="modal-btn secondary" onclick="nextStep(4)">
+                Sometimes... it depends 💭
+              </button>
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div id="step4" class="forgiveness-step" style="display: none">
+            <p class="apology-text" style="font-size: 22px; margin: 30px 0">
+              I promise to be more caring and attentive. Does that matter to
+              you? 💝
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <button class="modal-btn" onclick="nextStep(5)">
+                Yes, that's important 💕
+              </button>
+              <button class="modal-btn secondary" onclick="nextStep(5)">
+                Actions speak louder 🎯
+              </button>
+            </div>
+          </div>
+          <!-- Step 5 -->
+          <div id="step5" class="forgiveness-step" style="display: none">
+            <p class="apology-text" style="font-size: 22px; margin: 30px 0">
+              Can we try to rebuild the trust we had? 🌈
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <button class="modal-btn" onclick="nextStep(6)">
+                I'm willing to try 🤝
+              </button>
+              <button class="modal-btn secondary" onclick="nextStep(6)">
+                It will take time ⏰
+              </button>
+            </div>
+          </div>
+          <!-- Step 6 -->
+          <div id="step6" class="forgiveness-step" style="display: none">
+            <p class="apology-text" style="font-size: 22px; margin: 30px 0">
+              Would you like to see me work harder to make you happy? 😊
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <button class="modal-btn" onclick="nextStep(7)">
+                Yes, I'd like that 💖
+              </button>
+              <button class="modal-btn secondary" onclick="nextStep(7)">
+                Show me you mean it 💪
+              </button>
+            </div>
+          </div>
+          <!-- Step 7 -->
+          <div id="step7" class="forgiveness-step" style="display: none">
+            <p class="apology-text" style="font-size: 22px; margin: 30px 0">
+              Do you remember all the good times we shared? 🌟
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <button class="modal-btn" onclick="nextStep(8)">
+                Yes, those were beautiful 🥰
+              </button>
+              <button class="modal-btn secondary" onclick="nextStep(8)">
+                I remember them 💭
+              </button>
+            </div>
+          </div>
+          <!-- Step 8 -->
+          <div id="step8" class="forgiveness-step" style="display: none">
+            <p class="apology-text" style="font-size: 22px; margin: 30px 0">
+              Can we create even more beautiful memories together? ��
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <button class="modal-btn" onclick="nextStep(9)">
+                I'd love to 💕
+              </button>
+              <button class="modal-btn secondary" onclick="nextStep(9)">
+                Let's see what happens 🌸
+              </button>
+            </div>
+          </div>
+          <!-- Step 9 -->
+          <div id="step9" class="forgiveness-step" style="display: none">
+            <p class="apology-text" style="font-size: 22px; margin: 30px 0">
+              Is your heart ready to let go of the hurt? 💗
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <button class="modal-btn" onclick="nextStep(10)">
+                I'm ready to heal 🌺
+              </button>
+              <button class="modal-btn secondary" onclick="nextStep(10)">
+                I'm trying to 💝
+              </button>
+            </div>
+          </div>
+          <!-- Step 10 - Final -->
+          <div id="step10" class="forgiveness-step" style="display: none">
+            <p
+              class="apology-text"
+              style="
+                font-size: 24px;
+                margin: 30px 0;
+                font-weight: 700;
+                color: #ff69b4;
+              "
+            >
+              Will you give us another chance? 🥺💕
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <button
+                class="modal-btn"
+                onclick="showHappyModal()"
+                style="font-size: 20px; padding: 20px 45px"
+              >
+                Yes, I forgive you ❤️
+              </button>
+              <button
+                class="modal-btn secondary"
+                onclick="showHappyModal()"
+                style="font-size: 20px; padding: 20px 45px"
+              >
+                Let's start fresh 🌟
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-divider"></div>
+        <div class="footer-text" id="footerText">Forever Yours ❤️</div>
+        <div class="footer-characters">🐻🤝🐼</div>
+        <p class="apology-text">
+          - Sadik, who loves you more than words can say -
+        </p>
+      </footer>
+    </div>
+    <!-- Modal -->
+    <div class="modal" id="forgivenessModal">
+      <div class="modal-content">
+        <div class="modal-emoji">🥺</div>
+        <div class="modal-text">
+          Please Chahat... I promise I'll never hurt you again. You're my world.
+          💖
+        </div>
+        <div class="modal-emoji">🙏</div>
+        <div class="modal-buttons">
+          <button class="modal-btn" onclick="showHappyModal()">
+            I forgive you 💕
+          </button>
+          <button class="modal-btn secondary" onclick="closeModal()">
+            I need time...
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Happy Modal -->
+    <div class="modal" id="happyModal">
+      <div class="modal-content">
+        <div class="modal-emoji">🎉</div>
+        <div class="modal-text">
+          Thank you so much Chahat! I promise to make you the happiest! 💖✨
+        </div>
+        <div class="modal-emoji">🤗</div>
+        <div class="modal-emoji">💪</div>
+        <div class="modal-text">I'll be the best partner you deserve! 🌟</div>
+        <div class="modal-buttons">
+          <button class="modal-btn" onclick="closeModal()">💕 Close</button>
+        </div>
+      </div>
+    </div>
+    <!-- Gift Modal -->
+    <div class="modal" id="giftModal">
+      <div class="modal-content" style="max-width: 650px">
+        <div
+          class="coupon-container"
+          style="margin: 0; position: relative; transform: scale(0.95)"
+        >
+          <div class="coupon-seal">Valid Forever ❤️</div>
+          <div class="coupon-title">∞ Unlimited Hugs ∞</div>
+          <div class="coupon-emoji">🤗</div>
+          <p class="apology-text" style="color: #ff69b4; margin-top: 20px">
+            Redeemable anytime, anywhere. No expiry date. Just call me and I'll
+            be there with warm hugs! 💕
+          </p>
+          <div style="margin-top: 30px">
+            <p class="apology-text" style="color: #ff69b4; font-size: 18px">
+              This coupon also includes: unlimited kisses 💋, endless cuddles
+              🥰, lifetime support 💪, and forever love ❤️
+            </p>
+          </div>
+        </div>
+        <div class="modal-buttons" style="margin-top: 30px">
+          <button class="modal-btn" onclick="closeModalAndShowForgiveness()">
+            Accept Gift 💝
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script>
+      // Configuration
+      const defaultConfig = {
+        main_heading: "Sorry Chahat ❤️",
+        hero_message: "Chahat, main tumse bohot pyaar karta hun... 💕",
+        apology_heading: "Dil Se Sorry 💔",
+        apology_message:
+          "I know I hurt you, and I can't take back what I did. But please know that every moment without your smile feels empty. You mean everything to me, and I promise to be better, to listen more, to cherish you more. Please give me one more chance to show you how much you matter to me. 🙏",
+        footer_text: "Forever Yours ❤️",
+        background_color: "#ff69b4",
+        card_color: "#ffd7e0",
+        text_color: "#ffffff",
+        button_color: "#ff1493",
+        accent_color: "#e9d8ff",
+      };
+
+      // Floating hearts generation
+      function createFloatingHearts() {
+        const container = document.getElementById("floatingHearts");
+        const hearts = ["💖", "💕", "💗", "💝", "💘", "💞", "🌹", "❤️"];
+
+        setInterval(() => {
+          const heart = document.createElement("div");
+          heart.className = "heart";
+          heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+          heart.style.left = Math.random() * 100 + "%";
+          heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+          heart.style.fontSize = Math.random() * 20 + 20 + "px";
+          container.appendChild(heart);
+
+          setTimeout(() => heart.remove(), 7000);
+        }, 800);
+      }
+
+      // Memory Game
+      const gameEmojis = ["💖", "💕", "💗", "💝", "💘", "💞", "🌹", "❤️"];
+      let gameCards = [...gameEmojis, ...gameEmojis];
+      let flippedCards = [];
+      let matchedPairs = 0;
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      function createGameBoard() {
+        const grid = document.getElementById("gameGrid");
+        grid.innerHTML = "";
+        gameCards = shuffleArray([...gameEmojis, ...gameEmojis]);
+        matchedPairs = 0;
+
+        gameCards.forEach((emoji, index) => {
+          const card = document.createElement("div");
+          card.className = "game-card";
+          card.dataset.index = index;
+          card.dataset.emoji = emoji;
+          card.innerHTML = `
+          <div class="card-back"></div>
+          <div class="card-front">${emoji}</div>
+        `;
+          card.onclick = () => flipCard(card);
+          grid.appendChild(card);
+        });
+      }
+
+      function flipCard(card) {
+        if (
+          flippedCards.length >= 2 ||
+          card.classList.contains("flipped") ||
+          card.classList.contains("matched")
+        ) {
+          return;
+        }
+
+        card.classList.add("flipped");
+        flippedCards.push(card);
+
+        if (flippedCards.length === 2) {
+          setTimeout(checkMatch, 800);
+        }
+      }
+
+      function checkMatch() {
+        const [card1, card2] = flippedCards;
+
+        if (card1.dataset.emoji === card2.dataset.emoji) {
+          card1.classList.add("matched");
+          card2.classList.add("matched");
+          matchedPairs++;
+
+          if (matchedPairs === gameEmojis.length) {
+            setTimeout(() => {
+              showGameWinModal();
+            }, 500);
+          }
+        } else {
+          card1.classList.remove("flipped");
+          card2.classList.remove("flipped");
+        }
+
+        flippedCards = [];
+      }
+
+      function resetGame() {
+        createGameBoard();
+      }
+
+      function showGameWinModal() {
+        const modal = document.getElementById("happyModal");
+        const content = modal.querySelector(".modal-content");
+        content.innerHTML = `
+        <div class="modal-emoji">🎉</div>
+        <div class="modal-text">
+          You won! Just like how we're perfect together! 💖
+        </div>
+        <div class="modal-emoji">✨</div>
+        <div class="modal-buttons">
+          <button class="modal-btn" onclick="closeModal()">Yay! ��</button>
+        </div>
+      `;
+        modal.classList.add("active");
+      }
+
+      // Reveal sections one by one
+      function revealApology() {
+        const section = document.getElementById("apologySection");
+        if (section) {
+          section.style.display = "block";
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function revealMemories() {
+        const section = document.getElementById("memoriesSection");
+        if (section) {
+          section.style.display = "block";
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function revealPromises() {
+        const section = document.getElementById("promiseSection");
+        if (section) {
+          section.style.display = "block";
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function revealSpace() {
+        const section = document.getElementById("spaceSection");
+        if (section) {
+          section.style.display = "block";
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function revealMusic() {
+        const section = document.getElementById("musicSection");
+        if (section) {
+          section.style.display = "block";
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function revealGame() {
+        const section = document.getElementById("gameSection");
+        if (section) {
+          section.style.display = "block";
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function revealDistance() {
+        const section = document.getElementById("distanceSection");
+        if (section) {
+          section.style.display = "block";
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function revealGift() {
+        const section = document.getElementById("giftSection");
+        if (section) {
+          section.style.display = "block";
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function revealForgiveness() {
+        const section = document.getElementById("forgivenessSection");
+        if (section) {
+          section.style.display = "block";
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      // Apology step-by-step function
+      function showApology(step) {
+        // Show the requested apology (keep previous ones visible)
+        const targetApology = document.getElementById("apology" + step);
+        if (targetApology) {
+          targetApology.style.display = "block";
+          setTimeout(() => {
+            targetApology.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }, 100);
+        }
+      }
+
+      // Forgiveness journey function
+      function nextStep(step) {
+        // Hide the current step only
+        const currentStep = document.querySelector(
+          '.forgiveness-step[style*="display: block"], .forgiveness-step:not([style])'
+        );
+        if (currentStep) {
+          currentStep.style.display = "none";
+        }
+
+        // Show the next step
+        const targetStep = document.getElementById("step" + step);
+        if (targetStep) {
+          targetStep.style.display = "block";
+          setTimeout(() => {
+            targetStep.scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 100);
+        }
+      }
+
+      // Modal functions
+      function showForgivenessModal() {
+        document.getElementById("forgivenessModal").classList.add("active");
+      }
+
+      function showHappyModal() {
+        document.getElementById("forgivenessModal").classList.remove("active");
+        setTimeout(() => {
+          const modal = document.getElementById("happyModal");
+          modal.querySelector(".modal-content").innerHTML = `
+          <div class="modal-emoji">🎉</div>
+          <div class="modal-text">
+            Thank you so much Chahat! I promise to make you the happiest! 💖✨
+          </div>
+          <div class="modal-emoji">🤗</div>
+          <div class="modal-emoji">💪</div>
+          <div class="modal-text">
+            I'll be the best partner you deserve! 🌟
+          </div>
+          <div class="modal-buttons">
+            <button class="modal-btn" onclick="closeModal()">💕 Close</button>
+          </div>
+        `;
+          modal.classList.add("active");
+        }, 300);
+      }
+
+      function closeModal() {
+        document.getElementById("forgivenessModal").classList.remove("active");
+        document.getElementById("happyModal").classList.remove("active");
+        document.getElementById("giftModal").classList.remove("active");
+      }
+
+      function closeModalAndShowForgiveness() {
+        closeModal();
+        setTimeout(() => {
+          revealForgiveness();
+        }, 500);
+      }
+
+      function showGiftModal() {
+        document.getElementById("giftModal").classList.add("active");
+      }
+
+      // Music functions
+      let musicPlaying = false;
+
+      function playMusic() {
+        const audio = document.getElementById("love-audio");
+        if (audio) {
+          audio.play();
+          musicPlaying = true;
+          const waveBars = document.querySelectorAll(".wave-bar");
+          waveBars.forEach((bar) => (bar.style.animationPlayState = "running"));
+        }
+      }
+
+      function pauseMusic() {
+        const audio = document.getElementById("love-audio");
+        if (audio) {
+          audio.pause();
+        }
+        const waveBars = document.querySelectorAll(".wave-bar");
+        waveBars.forEach((bar) => (bar.style.animationPlayState = "paused"));
+      }
+
+      function stopMusic() {
+        const audio = document.getElementById("love-audio");
+        if (audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+        musicPlaying = false;
+        const waveBars = document.querySelectorAll(".wave-bar");
+        waveBars.forEach((bar) => {
+          bar.style.animationPlayState = "paused";
+          bar.style.height = "10px";
+        });
+      }
+
+      // Scroll function
+      function scrollToForgiveness() {
+        document.getElementById("forgivenessSection").scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+
+      // Element SDK Implementation
+      async function onConfigChange(config) {
+        document.getElementById("mainHeading").textContent =
+          config.main_heading || defaultConfig.main_heading;
+        document.getElementById("heroMessage").textContent =
+          config.hero_message || defaultConfig.hero_message;
+        document.getElementById("apologyHeading").textContent =
+          config.apology_heading || defaultConfig.apology_heading;
+        document.getElementById("apologyMessage").textContent =
+          config.apology_message || defaultConfig.apology_message;
+        document.getElementById("footerText").textContent =
+          config.footer_text || defaultConfig.footer_text;
+
+        const bgColor =
+          config.background_color || defaultConfig.background_color;
+        const cardColor = config.card_color || defaultConfig.card_color;
+        const textColor = config.text_color || defaultConfig.text_color;
+        const buttonColor = config.button_color || defaultConfig.button_color;
+        const accentColor = config.accent_color || defaultConfig.accent_color;
+
+        document.body.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${accentColor} 50%, #cfeaf9 100%)`;
+      }
+
+      function mapToCapabilities(config) {
+        return {
+          recolorables: [
+            {
+              get: () =>
+                config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              },
+            },
+            {
+              get: () => config.card_color || defaultConfig.card_color,
+              set: (value) => {
+                config.card_color = value;
+                window.elementSdk.setConfig({ card_color: value });
+              },
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              },
+            },
+            {
+              get: () => config.button_color || defaultConfig.button_color,
+              set: (value) => {
+                config.button_color = value;
+                window.elementSdk.setConfig({ button_color: value });
+              },
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              },
+            },
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined,
+        };
+      }
+
+      function mapToEditPanelValues(config) {
+        return new Map([
+          ["main_heading", config.main_heading || defaultConfig.main_heading],
+          ["hero_message", config.hero_message || defaultConfig.hero_message],
+          [
+            "apology_heading",
+            config.apology_heading || defaultConfig.apology_heading,
+          ],
+          [
+            "apology_message",
+            config.apology_message || defaultConfig.apology_message,
+          ],
+          ["footer_text", config.footer_text || defaultConfig.footer_text],
+        ]);
+      }
+
+      // Initialize
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues,
+        });
+      }
+
+      // Distance Game Variables
+      let distance = 10;
+      let dialogueIndex = 0;
+      const dialogues = [
+        "Chahat… I'm trying, mujhe ek mauka do… 🥺",
+        "Main sach me bohot sorry hun… 💔",
+        "Tumhare bina main adhura hun… 🌙",
+        "Please mat bhejna mujhe door… 😔",
+        "Main har kadam tumhari taraf aa raha hun… 👣",
+        "Tum meri jaan ho Chahat… 💖",
+        "Bas ek hug de do… 🤗",
+        "Main tumhe kabhi hurt nahi karunga… 🙏",
+        "Tumhari khushi meri khushi hai… ✨",
+        "Chahat… please maaf kar do ❤️🥺",
+      ];
+
+      // Create floating hearts in game arena
+      function createDistanceHearts() {
+        const container = document.getElementById("distanceHearts");
+        if (!container) return;
+
+        for (let i = 0; i < 8; i++) {
+          const heart = document.createElement("div");
+          heart.className = "distance-heart";
+          heart.textContent = "💕";
+          heart.style.left = 15 + i * 10 + "%";
+          heart.style.top = 20 + Math.random() * 60 + "%";
+          heart.style.animationDelay = i * 0.3 + "s";
+          container.appendChild(heart);
+        }
+      }
+
+      // Update distance display
+      function updateDistanceDisplay() {
+        const distanceValue = document.getElementById("distanceValue");
+        const distanceBar = document.getElementById("distanceBar");
+        const sadikChar = document.getElementById("sadikChar");
+
+        if (distanceValue) distanceValue.textContent = distance;
+        if (distanceBar) {
+          const progress = ((10 - distance) / 10) * 100;
+          distanceBar.style.width = progress + "%";
+        }
+
+        if (sadikChar) {
+          const position = 5 + ((10 - distance) / 10) * 70;
+          sadikChar.style.left = position + "%";
+        }
+      }
+
+      // Come Closer function
+      function comeCloser() {
+        if (distance > 0) {
+          distance--;
+          updateDistanceDisplay();
+
+          // Show dialogue
+          const dialogueText = document.getElementById("dialogueText");
+          if (dialogueText && dialogueIndex < dialogues.length) {
+            dialogueText.style.opacity = "0";
+            setTimeout(() => {
+              dialogueText.textContent = dialogues[dialogueIndex];
+              dialogueText.style.transition = "opacity 0.5s ease";
+              dialogueText.style.opacity = "1";
+              dialogueIndex++;
+            }, 200);
+          }
+
+          // Check if reached
+          if (distance === 0) {
+            setTimeout(showVictory, 800);
+          }
+        }
+      }
+
+      // Push Away function
+      function pushAway() {
+        if (distance < 10) {
+          distance++;
+          updateDistanceDisplay();
+
+          const dialogueText = document.getElementById("dialogueText");
+          const sadMessages = [
+            "Chahat… please don't push me away… 😢",
+            "Mujhe thoda aur paas aane do… 🥺",
+            "Main tumhare liye kuch bhi karunga… 💔",
+          ];
+
+          if (dialogueText) {
+            dialogueText.style.opacity = "0";
+            setTimeout(() => {
+              dialogueText.textContent =
+                sadMessages[Math.floor(Math.random() * sadMessages.length)];
+              dialogueText.style.transition = "opacity 0.5s ease";
+              dialogueText.style.opacity = "1";
+            }, 200);
+          }
+        }
+      }
+
+      // Show victory animation
+      function showVictory() {
+        const meetingAnim = document.getElementById("meetingAnimation");
+        const victoryMsg = document.getElementById("victoryMessage");
+        const controls = document.querySelectorAll(".distance-btn");
+        const dialogueBox = document.getElementById("dialogueBox");
+
+        if (meetingAnim) {
+          meetingAnim.style.display = "block";
+        }
+
+        if (dialogueBox) {
+          dialogueBox.style.display = "none";
+        }
+
+        controls.forEach((btn) => (btn.style.display = "none"));
+
+        // Create heart explosion
+        createHeartExplosion();
+
+        setTimeout(() => {
+          if (meetingAnim) meetingAnim.style.display = "none";
+          if (victoryMsg) victoryMsg.style.display = "block";
+        }, 1500);
+      }
+
+      // Create heart explosion effect
+      function createHeartExplosion() {
+        const container = document.querySelector(".distance-game-container");
+        if (!container) return;
+
+        for (let i = 0; i < 20; i++) {
+          const heart = document.createElement("div");
+          heart.textContent = ["💖", "💕", "💗", "💝"][
+            Math.floor(Math.random() * 4)
+          ];
+          heart.style.position = "fixed";
+          heart.style.left = "50%";
+          heart.style.top = "50%";
+          heart.style.fontSize = 30 + Math.random() * 30 + "px";
+          heart.style.zIndex = "9999";
+          heart.style.pointerEvents = "none";
+
+          const angle = (Math.PI * 2 * i) / 20;
+          const velocity = 100 + Math.random() * 100;
+          const tx = Math.cos(angle) * velocity;
+          const ty = Math.sin(angle) * velocity;
+
+          container.appendChild(heart);
+
+          heart.animate(
+            [
+              { transform: "translate(-50%, -50%) scale(0)", opacity: 1 },
+              {
+                transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(1)`,
+                opacity: 0,
+              },
+            ],
+            {
+              duration: 1500,
+              easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+            }
+          ).onfinish = () => heart.remove();
+        }
+      }
+
+      // Give Hug function
+      function giveHug() {
+        const sadikChar = document.getElementById("sadikChar");
+        const chahatChar = document.getElementById("chahatChar");
+        const victoryMsg = document.getElementById("victoryMessage");
+
+        if (sadikChar && chahatChar) {
+          sadikChar.style.transition = "all 1s ease";
+          chahatChar.style.transition = "all 1s ease";
+          sadikChar.style.left = "45%";
+          chahatChar.style.right = "45%";
+          sadikChar.style.fontSize = "100px";
+          chahatChar.style.fontSize = "100px";
+        }
+
+        setTimeout(() => {
+          createHeartExplosion();
+          if (victoryMsg) {
+            victoryMsg.innerHTML = `
+            <div style="font-size: 80px; margin-bottom: 20px;">🤗💖🤗</div>
+            <p class="apology-text" style="font-size: 28px; font-weight: 700; color: #ff69b4; margin-bottom: 20px;">
+              Thank you Chahat! I love you so much! 💕
+            </p>
+            <p class="apology-text" style="font-size: 20px; color: #d63384;">
+              You're my everything ✨
+            </p>
+          `;
+          }
+        }, 1000);
+      }
+
+      // Reset Distance Game
+      function resetDistanceGame() {
+        distance = 10;
+        dialogueIndex = 0;
+
+        updateDistanceDisplay();
+
+        const dialogueText = document.getElementById("dialogueText");
+        const dialogueBox = document.getElementById("dialogueBox");
+        const victoryMsg = document.getElementById("victoryMessage");
+        const controls = document.querySelectorAll(".distance-btn");
+        const sadikChar = document.getElementById("sadikChar");
+        const chahatChar = document.getElementById("chahatChar");
+
+        if (dialogueText) {
+          dialogueText.textContent =
+            'Click "Come Closer ❤️" to help Sadik reach Chahat...';
+        }
+
+        if (dialogueBox) dialogueBox.style.display = "flex";
+        if (victoryMsg) victoryMsg.style.display = "none";
+
+        controls.forEach((btn) => (btn.style.display = "inline-block"));
+
+        if (sadikChar) {
+          sadikChar.style.left = "5%";
+          sadikChar.style.fontSize = "80px";
+        }
+
+        if (chahatChar) {
+          chahatChar.style.right = "5%";
+          chahatChar.style.fontSize = "80px";
+        }
+      }
+
+      // Start the experience
+      createFloatingHearts();
+      createGameBoard();
+      createDistanceHearts();
+      updateDistanceDisplay();
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9abbf1d1f42d257c',t:'MTc2NTM2MTM0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
